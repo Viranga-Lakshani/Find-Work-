@@ -1,0 +1,16 @@
+package com.example.findwork.exception; // Package name changed
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@ResponseStatus(HttpStatus.NOT_FOUND) // This annotation makes Spring return a 404 Not Found
+public class JobNotFoundException extends RuntimeException {
+
+    public JobNotFoundException(String message) {
+        super(message); // Call the constructor of the parent class (RuntimeException)
+    }
+
+    public JobNotFoundException(String message, Throwable cause) { // Overloaded constructor to handle exceptions with causes
+        super(message, cause);
+    }
+}
